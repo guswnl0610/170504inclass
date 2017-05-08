@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,46 +8,57 @@
     tools:context="com.example.guswn_000.a170504inclass.MainActivity">
 
     <LinearLayout
-        android:id="@+id/linear"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:id="@+id/biglinear"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPostalAddress" />
+            android:orientation="horizontal">
 
-        <Button
+            <EditText
+                android:id="@+id/editText"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPostalAddress" />
 
-            android:onClick="onClick"
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#fdc77c"
-            android:textColor="#ffffff"
-            android:text="GO" />
+            <Button
 
-        <Button
+                android:id="@+id/button"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#fdc77c"
+                android:onClick="onClick"
+                android:text="GO"
+                android:textColor="#ffffff" />
 
-            android:onClick="onClick"
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#fdc77c"
-            android:textColor="#ffffff"
-            android:text="AA" />
+
+        </LinearLayout>
+
+        <WebView
+            android:id="@+id/WebView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </WebView>
 
     </LinearLayout>
 
-    <WebView
-        android:id="@+id/WebView"
+    <ListView
+        android:id="@+id/listview"
+        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-</LinearLayout>
+</FrameLayout>
